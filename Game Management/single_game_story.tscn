@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://v6jhpqm2ebpl"]
+
+[ext_resource type="PackedScene" uid="uid://id53ybav0hk7" path="res://Scenes/terrain.tscn" id="1_esee5"]
+[ext_resource type="PackedScene" uid="uid://c7ph3x7gd82ra" path="res://Scenes/Player/pawn_blue.tscn" id="2_nlcma"]
+
+[node name="SingleGameStory" type="Node2D"]
+
+[node name="Terrain" parent="." instance=ExtResource("1_esee5")]
+
+[node name="PawnBlue" parent="." instance=ExtResource("2_nlcma")]

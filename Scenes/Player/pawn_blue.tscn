@@ -1,0 +1,123 @@
+[gd_scene load_steps=10 format=3 uid="uid://c7ph3x7gd82ra"]
+
+[ext_resource type="PackedScene" uid="uid://cq5ojyfngla5n" path="res://Scenes/Player/player.tscn" id="1_37o47"]
+[ext_resource type="Texture2D" uid="uid://dohynyxjdqrc2" path="res://Assets/Knights/Troops/Pawn/Blue/Pawn_Blue.png" id="2_b44p5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hfne6"]
+radius = 6.0
+height = 34.0
+
+[sub_resource type="Animation" id="Animation_to52d"]
+resource_name = "PawnBlueIdle"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_x27ag"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_fjews"]
+resource_name = "PawnBlueRun"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [6, 7, 8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_jr8pb"]
+resource_name = "PawnBlueAttackHammer"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15, 16, 17]
+}
+
+[sub_resource type="Animation" id="Animation_jo1in"]
+resource_name = "PawnBlueAttackAxe"
+length = 0.6
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Texture:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [18, 19, 20, 21, 22, 23]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ve1r3"]
+_data = {
+"PawnBlueAttackAxe": SubResource("Animation_jo1in"),
+"PawnBlueAttackHammer": SubResource("Animation_jr8pb"),
+"PawnBlueIdle": SubResource("Animation_to52d"),
+"PawnBlueRun": SubResource("Animation_fjews"),
+"RESET": SubResource("Animation_x27ag")
+}
+
+[node name="PawnBlue" instance=ExtResource("1_37o47")]
+_left_attack_name = "PawnBlueAttackHammer"
+_right_attack_name = "PawnBlueAttackAxe"
+
+[node name="Texture" parent="." index="0"]
+position = Vector2(0, -26)
+texture = ExtResource("2_b44p5")
+hframes = 6
+vframes = 6
+
+[node name="Collision" parent="." index="1"]
+visible = false
+show_behind_parent = true
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_hfne6")
+
+[node name="Animation" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_ve1r3")
+}
+autoplay = "PawnBlueIdle"

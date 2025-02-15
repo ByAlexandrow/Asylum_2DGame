@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://cq5ojyfngla5n"]
+
+[ext_resource type="Script" path="res://Scenes/Player/player.gd" id="1_htswk"]
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("_sprite2D", "_animation")]
+script = ExtResource("1_htswk")
+_sprite2D = NodePath("Texture")
+_animation = NodePath("Animation")
+
+[node name="Texture" type="Sprite2D" parent="."]
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+
+[connection signal="animation_finished" from="Animation" to="." method="_on_animation_finished"]
