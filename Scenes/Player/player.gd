@@ -1,17 +1,23 @@
 extends CharacterBody2D
 class_name Player
 
+var _is_in_mountain: bool = false
 var _can_attack = true
 var _attack_animation_name: String = ""
 
 @export_category("Variables")
-@export var _move_speed: float = 120.0
+@export var _move_speed: float = 200.0
 @export var _left_attack_name: String = ""
 @export var _right_attack_name: String = ""
 
 @export_category("Objects")
 @export var _sprite2D: Sprite2D
+@export var _bridge: TileMapLayer
 @export var _animation: AnimationPlayer
+
+
+func _ready() -> void:
+	update_mountain_state(_is_in_mountain)
 
 
 func _process(_delta: float) -> void:
@@ -67,3 +73,32 @@ func _on_animation_finished(_anim_name: StringName) -> void:
 	if _anim_name == "PawnBlueAttackHammer" or _anim_name == "PawnBlueAttackAxe":
 		_can_attack = true
 		set_physics_process(true)
+
+
+func update_collision_layer_mask(_type: String) -> void:
+	if _type == "in":
+		set_collision_layer_value(1, false)
+		set_collision_layer_value(2, true)
+		
+		set_collision_mask_value(1, false)
+		set_collision_mask_value(2, true)
+		
+	if _type == "out":
+		set_collision_layer_value(1, true)
+		set_collision_layer_value(2, false)
+		
+		set_collision_mask_value(1, true)
+		set_collision_mask_value(2, false)
+
+
+func update_mountain_state(_state: bool) -> void:
+	_is_in_mountain = _state
+	if _is_in_mountain == false:
+		_bridge.z_index = 1
+	
+	if _is_in_mountain == true:
+		_bridge.z_index = 0
+
+
+func get_is_in_mountain() -> bool:
+	return _is_in_mountain

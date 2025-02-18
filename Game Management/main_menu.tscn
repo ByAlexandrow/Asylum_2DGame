@@ -1,0 +1,328 @@
+[gd_scene load_steps=24 format=3 uid="uid://iccupq1r2lmf"]
+
+[ext_resource type="FontFile" uid="uid://4i1hr18lsk1a" path="res://Assets/Fonts/TitilliumWeb-SemiBold.ttf" id="1_8nj2g"]
+[ext_resource type="Texture2D" uid="uid://tu4c5a6gdgc0" path="res://Assets/UI/Ribbons/Ribbon_Blue_3Slides.png" id="1_gwkqw"]
+[ext_resource type="FontFile" uid="uid://c4lqdsia86ss6" path="res://Assets/Fonts/TitilliumWeb-SemiBoldItalic.ttf" id="2_04c1a"]
+[ext_resource type="Texture2D" uid="uid://d1tpbmg4qiio" path="res://Assets/UI/Buttons/Button_Blue_3Slides.png" id="2_w452b"]
+[ext_resource type="Texture2D" uid="uid://cr3puynfcv4ej" path="res://Assets/UI/Buttons/Button_Blue_3Slides_Pressed.png" id="3_syf67"]
+[ext_resource type="Texture2D" uid="uid://iserne5vs5m8" path="res://Assets/UI/Buttons/Button_Hover_3Slides.png" id="4_m0jwp"]
+[ext_resource type="Texture2D" uid="uid://d26u35jf0vpl5" path="res://Assets/UI/Buttons/Button_Disable_3Slides.png" id="5_g8xxe"]
+[ext_resource type="Texture2D" uid="uid://nplmarv68kd2" path="res://Assets/UI/Buttons/Button_Blue.png" id="7_fclwn"]
+[ext_resource type="Texture2D" uid="uid://dnwpqi7h18n2a" path="res://Assets/UI/Buttons/Button_Blue_Pressed.png" id="8_6av8n"]
+[ext_resource type="Texture2D" uid="uid://dl4pnnw2telxa" path="res://Assets/UI/Buttons/Button_Hover.png" id="9_txobt"]
+[ext_resource type="Texture2D" uid="uid://cgqroyoo7lw0o" path="res://Assets/UI/Buttons/Button_Disable.png" id="10_dgth4"]
+[ext_resource type="Texture2D" uid="uid://cg3fa4u2sq077" path="res://Assets/UI/Icons/Regular_07.png" id="11_jfaou"]
+[ext_resource type="Texture2D" uid="uid://cg0v2v4mjuvay" path="res://Assets/UI/Icons/Pressed_07.png" id="12_c4ens"]
+[ext_resource type="Texture2D" uid="uid://brb4uvi3ndw1" path="res://Assets/UI/Icons/Disable_07.png" id="13_ttqy4"]
+[ext_resource type="Texture2D" uid="uid://cr6nwcoqde4cp" path="res://Assets/UI/Icons/Regular_10.png" id="14_pa6ds"]
+[ext_resource type="Texture2D" uid="uid://cbvrromj01c3l" path="res://Assets/UI/Icons/Pressed_10.png" id="15_56b5x"]
+[ext_resource type="Texture2D" uid="uid://ds8m526psf3i2" path="res://Assets/UI/Icons/Disable_10.png" id="16_g1jou"]
+[ext_resource type="Texture2D" uid="uid://dbw2j6b0ra2ln" path="res://Assets/UI/Icons/Regular_02.png" id="17_1klyd"]
+[ext_resource type="Texture2D" uid="uid://2dut2yw1p0yk" path="res://Assets/UI/Icons/Pressed_02.png" id="18_ji8iv"]
+[ext_resource type="Texture2D" uid="uid://byf063ucvtk4h" path="res://Assets/UI/Icons/Disable_02.png" id="19_oxsqh"]
+[ext_resource type="Texture2D" uid="uid://ry66bnsrj7al" path="res://Assets/UI/Icons/Regular_03.png" id="20_m83h6"]
+[ext_resource type="Texture2D" uid="uid://1u6dr8s33w40" path="res://Assets/UI/Icons/Pressed_03.png" id="21_s4jg3"]
+[ext_resource type="Texture2D" uid="uid://cisflvq3rvd0" path="res://Assets/UI/Icons/Disable_03.png" id="22_fys1u"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -207.0
+offset_top = 11.0
+offset_right = 208.0
+offset_bottom = 99.0
+grow_horizontal = 2
+texture_normal = ExtResource("1_gwkqw")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="TextureButton"]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = -11.0
+offset_right = -8.0
+offset_bottom = 74.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_04c1a")
+theme_override_font_sizes/font_size = 45
+text = "ASYLUM"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TButtonSingleGame" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -37.0
+offset_right = 296.0
+offset_bottom = 46.0
+grow_vertical = 2
+texture_normal = ExtResource("2_w452b")
+texture_pressed = ExtResource("3_syf67")
+texture_hover = ExtResource("4_m0jwp")
+texture_disabled = ExtResource("5_g8xxe")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="SingleGame" type="Label" parent="TButtonSingleGame"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 24.0
+offset_top = 10.0
+offset_right = 273.0
+offset_bottom = 54.0
+theme_override_colors/font_color = Color(0.847976, 0.439432, 9.62615e-07, 1)
+theme_override_fonts/font = ExtResource("1_8nj2g")
+theme_override_font_sizes/font_size = 25
+text = "SINGLE GAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TButtonMultiplayer" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 46.0
+offset_right = 242.0
+offset_bottom = 118.0
+grow_vertical = 2
+texture_normal = ExtResource("2_w452b")
+texture_pressed = ExtResource("3_syf67")
+texture_hover = ExtResource("4_m0jwp")
+texture_disabled = ExtResource("5_g8xxe")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Multiplayer" type="Label" parent="TButtonMultiplayer"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 20.0
+offset_top = 9.0
+offset_right = 223.0
+offset_bottom = 47.0
+theme_override_colors/font_color = Color(0.847976, 0.439432, 9.62615e-07, 1)
+theme_override_fonts/font = ExtResource("1_8nj2g")
+theme_override_font_sizes/font_size = 22
+text = "MULTIPLAYER"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TButtonQuit" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = 118.0
+offset_right = 192.0
+offset_bottom = 182.0
+grow_vertical = 2
+texture_normal = ExtResource("2_w452b")
+texture_pressed = ExtResource("3_syf67")
+texture_hover = ExtResource("4_m0jwp")
+texture_disabled = ExtResource("5_g8xxe")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Quit" type="Label" parent="TButtonQuit"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 15.0
+offset_top = 8.0
+offset_right = 177.0
+offset_bottom = 41.0
+theme_override_colors/font_color = Color(0.847976, 0.439432, 9.62615e-07, 1)
+theme_override_fonts/font = ExtResource("1_8nj2g")
+theme_override_font_sizes/font_size = 21
+text = "QUIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TButtonInventory" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.0
+offset_top = 129.0
+offset_bottom = 199.0
+grow_horizontal = 0
+texture_normal = ExtResource("7_fclwn")
+texture_pressed = ExtResource("8_6av8n")
+texture_hover = ExtResource("9_txobt")
+texture_disabled = ExtResource("10_dgth4")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TButtonShop" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.0
+offset_top = 199.0
+offset_bottom = 268.0
+grow_horizontal = 0
+texture_normal = ExtResource("7_fclwn")
+texture_pressed = ExtResource("8_6av8n")
+texture_hover = ExtResource("9_txobt")
+texture_disabled = ExtResource("10_dgth4")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="TButtonShop"]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 69.0
+texture_normal = ExtResource("11_jfaou")
+texture_pressed = ExtResource("12_c4ens")
+texture_disabled = ExtResource("13_ttqy4")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TButtonAchieves" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -73.0
+offset_top = 268.0
+offset_bottom = 341.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_fclwn")
+texture_pressed = ExtResource("8_6av8n")
+texture_hover = ExtResource("9_txobt")
+texture_disabled = ExtResource("10_dgth4")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="TButtonAchieves"]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 73.0
+texture_normal = ExtResource("14_pa6ds")
+texture_pressed = ExtResource("15_56b5x")
+texture_disabled = ExtResource("16_g1jou")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TButtonInfo" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_fclwn")
+texture_pressed = ExtResource("8_6av8n")
+texture_hover = ExtResource("9_txobt")
+texture_disabled = ExtResource("10_dgth4")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TButtonInfoSettings" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -73.0
+offset_top = -142.0
+offset_right = 1.0
+offset_bottom = -70.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_fclwn")
+texture_pressed = ExtResource("8_6av8n")
+texture_hover = ExtResource("9_txobt")
+texture_disabled = ExtResource("10_dgth4")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="TButtonInfoSettings"]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 72.0
+texture_normal = ExtResource("17_1klyd")
+texture_pressed = ExtResource("18_ji8iv")
+texture_disabled = ExtResource("19_oxsqh")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TButtonInfoSound" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -146.0
+offset_top = -70.0
+offset_right = -73.0
+grow_horizontal = 0
+grow_vertical = 0
+texture_normal = ExtResource("7_fclwn")
+texture_pressed = ExtResource("8_6av8n")
+texture_hover = ExtResource("9_txobt")
+texture_disabled = ExtResource("10_dgth4")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="TextureButton" type="TextureButton" parent="TButtonInfoSound"]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 70.0
+texture_normal = ExtResource("20_m83h6")
+texture_pressed = ExtResource("21_s4jg3")
+texture_disabled = ExtResource("22_fys1u")
+stretch_mode = 0
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
